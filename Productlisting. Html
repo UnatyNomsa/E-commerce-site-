@@ -1,0 +1,7 @@
+productDiv.innerHTML = `
+  <img src="${product.image}" alt="${product.name}" />
+  <h3>${product.name}</h3>
+  <p>$${product.price.toFixed(2)}</p>
+  <a href="product.html?id=${product.id}" class="btn">View Details</a>
+  <button onclick="addToCart(${product.id})">Add to Cart</button>
+`;
