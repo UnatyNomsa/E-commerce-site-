@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - My Ecommerce Site</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Checkout</h1>
+    <form id="checkout-form">
+      <label>
+        Full Name:
+        <input type="text" name="fullName" required />
+      </label>
+      <label>
+        Email:
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Address:
+        <textarea name="address" required></textarea>
+      </label>
+      <button type="submit" class="btn">Place Order</button>
+    </form>
+    <p id="confirmation-message" style="color:green; display:none;">Thank you for your order!</p>
+  </main>
+
+  <script>
+    const form = document.getElementById('checkout-form');
+    const confirmationMessage = document.getElementById('confirmation-message');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      // Basic validation already handled by 'required' attribute
+      // Could add more validation here if needed
+
+      // Simulate order placement
+      confirmationMessage.style.display = 'block';
+      form.reset();
+
+      // Clear the cart after order
+      localStorage.removeItem('cart');
+    });
+  </script>
+</body>
+</html>
